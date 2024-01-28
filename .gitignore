@@ -1,2 +1,9 @@
-venv/
-.env
+api_cr/__pycache__
+api_cr/venv
+
+api_fd/__pycache__
+api_fd/venv
+
+web_app/venv
+
+dumper/
