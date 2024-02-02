@@ -59,7 +59,7 @@ def main():
 
     if st.button('Get Prediction'):
         with st.spinner("Processing"):
-            api_url = "http://127.0.0.1:5000/predict"  # Replace with your FastAPI server's URL
+            api_url = "http://api_cr:5002/predict"  # Replace with your FastAPI server's URL
             response = requests.post(api_url, json=data)
             if response.status_code == 200:
                 st.write("Credit Risk:", response.json().get("Credit Risk"))

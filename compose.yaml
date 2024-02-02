@@ -1,0 +1,25 @@
+services:
+  mlcenter:
+    build:
+      context: ./web_app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api_fd
+      - api_cr
+
+  api_fd:
+    build:
+      context: ./api_fd
+    ports:
+      - "5001:5001"
+
+  api_cr:
+    build:
+      context: ./api_cr
+    ports:
+      - "5002:5002"
+
+networks:
+  my-network:
+    driver: bridge

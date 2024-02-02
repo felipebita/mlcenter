@@ -17,6 +17,9 @@ RUN pip3 install --upgrade pip
 # Install requirements as root
 RUN pip3 install -r /api_fd/requirements.txt
 
+# Expose port
+EXPOSE 5001
+
 # Create a new user
 RUN useradd -ms /bin/bash appuser
 
@@ -30,5 +33,5 @@ USER appuser
 WORKDIR /api_fd
 
 #Initiate streamlit app
-CMD ["uvicorn", "main:app", "--port", "5050"]
+CMD ["uvicorn", "main:app", "--port", "5001", "--host", "0.0.0.0"]
 
